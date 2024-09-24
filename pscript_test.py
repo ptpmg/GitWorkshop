@@ -1,5 +1,6 @@
 def test_adition():
-    assert 1 + 1 == 5
+    assert 1 + 1 == 2
+
 
 def main():
     print("Olá mundo!")
