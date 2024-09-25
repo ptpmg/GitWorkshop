@@ -1,10 +1,24 @@
 name: Security Check
+
 on: [push]
+
 jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Check for vulnerabilities
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'  
+
+      - name: Install Safety and dependencies
         run: |
-          safety check -r requirements_quality_security.txt
+          python -m pip install --upgrade pip
+          pip install safety
+          if [ -f requirements_quality_security.txt ]; then pip install -r requirements_quality_security.txt; fi
+
+      - name: Check for vulnerabilities
+        run: safety check -r requirements_quality_security.txt
