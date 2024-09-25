@@ -1,0 +1,13 @@
+# Code quality tools
+flake8
+black
+isort
+mypy
+
+# Security tools
+bandit
+safety
+
+# Testing tools
+pytest
+pytest-cov

@@ -1,0 +1,10 @@
+name: Security Check
+on: [push]
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check for vulnerabilities
+        run: |
+          safety check -r requirements_quality_secutiry.txt
