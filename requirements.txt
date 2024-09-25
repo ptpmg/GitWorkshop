@@ -1,3 +1,4 @@
 pytest>=6.2              # Testing framework
 flake8>=3.9              # Code linting
 black==23.3              # Code formatter
+pytest-cov>=3.0
