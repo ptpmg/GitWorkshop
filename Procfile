@@ -1,0 +1,1 @@
+web: python pscript_test.py
